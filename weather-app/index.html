@@ -1,0 +1,53 @@
+<html>
+    <head><title>weather---app</title>
+    <link rel="stylesheet" href="index.css">
+    </head>
+    <body>
+        <input type="text" placeholder="Enter City...." id="searchbox">
+
+        <button id="searchbutton">
+        &#x1F50D;  Search 
+        </button>
+        <div style="height: 5.8vh; width: 1.7vw; background-color: white; margin-left: 50.5vw;position: absolute;border-radius:0.3vh;margin-top: -5.75vh;"><img src="./images/memory.jpg" style="object-fit: contain;height: 100%;width: 100%;" id="memory"></div>
+        <div style="height: 1vw;width: 12.1vw;position: absolute;text-align: center;position: absolute;margin-left: 40.1vw;border-radius: 0.2vh;margin-top: 0.5vh;" id="saved">SAVED ▼</div>
+        <div id="listbox">
+            <ul style="font-size: 1.25rem;">
+                <li>item1</li>
+                <li>item2</li>
+                <li>item3</li>
+            </ul>
+        </div>
+
+
+
+        <div style="position: relative;display: none;" id="borderdiv">
+        <div id="imgdiv">
+            <img src="./images/mist.png" id="image1"/>
+        </div>
+        <div id="datadiv" style="color: white;">
+            <div >
+            <p id="p1" style="margin-left: 7vw;font-size: 3rem;" >
+                <span id="name">London</span> <span style="margin-left: 5vw;" id="temp">25C</span>
+            </p >
+            </div>
+            
+               
+
+                <div style=" display: inline-block;width: 10vw;position: absolute; margin-left: 8vw;height: 20vh;">
+               <p id="p2"><img src="./images/humidity.png"> <span style="font-size: 2.5rem;" id="humidity">60%</span></p> 
+               <p style="position:relative;margin-top: -2vh;font-size: 2rem;"> humidity</p>
+               </div>
+
+
+               <div style="display: inline-block;width: 10vw;position: absolute; margin-left: 25vw; height: 20vh;">
+               <p id="p2"><img src="./images/wind.png"> <span style="font-size: 2.5rem;" id="windSpeed">60%</span></p> 
+               <p style="position:relative;margin-top: -2vh;font-size: 2rem;"> wind speed</p>
+               </div>
+            
+            
+        </div>
+        </div>
+        
+       <script src="script.js"></script>
+    </body>
+</html>

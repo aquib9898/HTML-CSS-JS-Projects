@@ -1,0 +1,37 @@
+body::before {color: white;
+    position: absolute;
+    content:'' ;
+    top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-image: radial-gradient(
+    circle 50vw at 50% 50vh,
+    rgba(16, 185, 129, 0.35),
+    transparent
+  );
+}
+
+body{background-color: black;
+position:relative;
+min-height: 100vh;}
+
+#searchbox{width: 70vw;height: 5vh;position: relative;margin:auto; display: block;margin-top: 25vh;border-radius: 1.5vh;}
+#searchbox:hover {transform: scaleX(1.04) scaleY(1.1); transition: 0.75s}
+
+#searchbutton{position: relative;height: 6vh;width: 10vw; margin-left:  40vw;;border-radius: 1vh ; display: block;margin-top: 5vh;}
+
+#searchbutton:hover{cursor: pointer;border: 3px solid black;}
+#searchbutton:active{background-color: rgba(37, 230, 11, 0);}
+#image1{object-fit: contain; height: 100%;width: 100%;}
+#imgdiv{height: 40vh;width:30vw; margin-top: 8vh;margin-left: 5vw;position: absolute;}
+#datadiv{height: 40vh;width: 50vw;margin-left: 35vw; position: absolute; margin-top: 8vh;} 
+#p1,#p2,#p3{font-family: 'Times New Roman', Times, serif;}
+#p2 img{height: 6vh;width: 4vw;}
+#memory:hover{border: 2px solid black;}
+#memory:active{border: transparent;}
+
+#saved{background-color: white}
+#saved:hover{opacity: 0.3;cursor: pointer;}
+#listbox{height: 40vh;width: 20vw;background-color: whitesmoke;position: absolute;margin-left: 35.8vw;margin-top: 0.6vh;z-index: -1;}
+
