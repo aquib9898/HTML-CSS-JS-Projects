@@ -5,6 +5,11 @@ const APIurl="https://api.openweathermap.org/data/2.5/weather?units=metric&q=";
    searchBox=document.querySelector('#searchbox');
    image=document.querySelector('#image1');
    const border=document.querySelector('#borderdiv');
+   const savebox=document.querySelector('#saved');
+   const listbox = document.querySelector('#listbox');
+    const saver = document.querySelector('#memory');
+    const list = document.querySelector('#list');
+
 
 
 async function checkweather(city) {try{
@@ -27,5 +32,23 @@ async function checkweather(city) {try{
     
 }
 
+
 button.addEventListener("click",()=>{checkweather(searchBox.value);})
+savebox.addEventListener("click",()=>{listbox.classList.toggle('select');})
+saver.addEventListener("click",()=>{if(searchBox.value===""){alert("enter valid city to save")}else{
+    li=document.createElement('li');
+    li.innerText=searchBox.value;
+    span=document.createElement('span');
+    span.innerHTML="X";
+    li.appendChild(span)
+    
+    list.appendChild(li);
+
+}
+})
+
+list.addEventListener("click",(e)=>{
+if(e.target.tagName==="SPAN"){e.target.parentElement.remove();}else if(e.target.tagName==="LI"){searchBox.value=e.target.firstChild.textContent;}
+})
+
 
