@@ -1,49 +1,87 @@
-  body::before {color: white;
-      position: absolute;
-      content:'' ;
-      top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background-image: radial-gradient(
-      circle 50vw at 50% 50vh,
-      rgba(16, 185, 129, 0.35),
-      transparent
-    );
+    body::before {color: white;
+        position: absolute;
+        content:'' ;
+        top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background-image: radial-gradient(
+        circle 50vw at 50% 50vh,
+        rgba(16, 185, 129, 0.35),
+        transparent
+      );
+    }
+
+    body{background-color: black;
+    position:relative;
+    min-height: 100vh;}
+
+    #searchbox{width: 70vw;height: 5vh;position: relative;margin:auto; display: block;margin-top: 25vh;border-radius: 1.5vh;}
+    #searchbox:hover {transform: scaleX(1.04) scaleY(1.1); transition: 0.75s}
+
+    #searchbutton{position: relative;height: 6vh;width: 10vw; margin-left:  40vw;;border-radius: 1vh ; display: block;margin-top: 5vh;}
+
+    #searchbutton:hover{cursor: pointer;border: 3px solid black;}
+    #searchbutton:active{background-color: rgba(37, 230, 11, 0);}
+    #image1{object-fit: contain; height: 100%;width: 100%;}
+    #imgdiv{height: 40vh;width:30vw; margin-top: 8vh;margin-left: 5vw;position: absolute;}
+    #datadiv{height: 40vh;width: 50vw;margin-left: 35vw; position: absolute; margin-top: 8vh;} 
+    #p1,#p2,#p3{font-family: 'Times New Roman', Times, serif;}
+    #p2 img{height: 6vh;width: 4vw;}
+    #memory:hover{border: 2px solid black;}
+    #memory:active{border: transparent;}
+    #borderdiv{z-index: 1;}
+    #saved{background-color: rgba(251, 249, 249, 0.337);z-index: 999;}
+    #saved:hover{opacity: 0.3;cursor: pointer;}
+  #listbox.select {
+    transform: scaleY(1);
+  }
+  #listbox {
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform 0.4s ease-in-out;
+    width: 20vw;
+    background-color: rgb(64, 61, 61);
+    border-radius: 1vh;
+    overflow: hidden;
+    position: absolute;
+    margin-left: 35.8vw;
+    margin-top: 0.6vh;
+    z-index: 100;
+  }
+    #list{padding-left: 0;margin: 0;padding-top: 1rem;z-index: 10;}
+    #list li{display: flex;border-radius: 0.2rem;width: 100%;justify-content: space-between;padding:0.4rem 1rem;box-sizing: border-box;}
+    #list li:hover{background-color: gray;}
+  #list li span {
+    display: inline-block;
+    border-radius: 0.3rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-right: 0;
   }
 
-  body{background-color: black;
-  position:relative;
-  min-height: 100vh;}
+  #toastbox{position: absolute;right: 5vw; height: 6vh;width: 18vw; bottom: 40vh;background-color: aliceblue;display: flex;justify-content: space-around;align-items: center;opacity: 0;transform: translateX(120%);transition: transform 0.5s,opacity 0.5s;color: red;font-size: 1.5rem;}
+    #toastbox.animate {
+    opacity: 1;
+    transform: translateX(0);}
 
-  #searchbox{width: 70vw;height: 5vh;position: relative;margin:auto; display: block;margin-top: 25vh;border-radius: 1.5vh;}
-  #searchbox:hover {transform: scaleX(1.04) scaleY(1.1); transition: 0.75s}
+  #toastbox::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;      
+    width: 100%;      
+    background: red;  
+  }
 
-  #searchbutton{position: relative;height: 6vh;width: 10vw; margin-left:  40vw;;border-radius: 1vh ; display: block;margin-top: 5vh;}
-
-  #searchbutton:hover{cursor: pointer;border: 3px solid black;}
-  #searchbutton:active{background-color: rgba(37, 230, 11, 0);}
-  #image1{object-fit: contain; height: 100%;width: 100%;}
-  #imgdiv{height: 40vh;width:30vw; margin-top: 8vh;margin-left: 5vw;position: absolute;}
-  #datadiv{height: 40vh;width: 50vw;margin-left: 35vw; position: absolute; margin-top: 8vh;} 
-  #p1,#p2,#p3{font-family: 'Times New Roman', Times, serif;}
-  #p2 img{height: 6vh;width: 4vw;}
-  #memory:hover{border: 2px solid black;}
-  #memory:active{border: transparent;}
-  #borderdiv{z-index: 1;}
-  #saved{background-color: white;z-index: 999;}
-  #saved:hover{opacity: 0.3;cursor: pointer;}
-  #listbox.select{height: 40vh;width: 20vw;background-color: whitesmoke;position: absolute;margin-left: 35.8vw;margin-top: 0.6vh;border-radius: 1vh;opacity: 0.4;display: block;z-index: 100;}
-  #listbox{display: none;}
-  #list{padding-left: 0;margin: 0;padding-top: 1rem;z-index: 10;}
-  #list li{display: flex;border-radius: 0.2rem;width: 100%;justify-content: space-between;padding:0.4rem 1rem;box-sizing: border-box;}
-  #list li:hover{background-color: gray;}
-#list li span {
-  display: inline-block;
-  border-radius: 0.3rem;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  margin-right: 0;
-}
+  @keyframes anim{
+    100%{width:0;}
+  }
 
 
+
+    
+#toastbox.animate::after {animation: anim 5s linear forwards;}
+
+#toastbox img{height: 100%;width: auto;}

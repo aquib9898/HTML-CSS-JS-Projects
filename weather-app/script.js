@@ -9,6 +9,7 @@ const APIurl="https://api.openweathermap.org/data/2.5/weather?units=metric&q=";
    const listbox = document.querySelector('#listbox');
     const saver = document.querySelector('#memory');
     const list = document.querySelector('#list');
+    const toastbox=document.querySelector('#toastbox');
 
 
 
@@ -28,9 +29,17 @@ async function checkweather(city) {try{
     else if(data.weather[0].main=="Mist"){image.src="./images/mist.png"}
 
 
-    border.style.display="block";}catch (error){alert("unknown city")}
+    border.style.display="block";}catch (error){ 
+    toastbox.innerHTML = '<img src="./images/cross.png" class="icon"> Enter a valid city'; 
+    toastbox.classList.remove("animate");
+    void toastbox.offsetWidth; 
+    toastbox.classList.add("animate");
+    setTimeout(() => {toastbox.classList.remove("animate");}, 5000);
+    }
     
 }
+
+
 
 
 button.addEventListener("click",()=>{checkweather(searchBox.value);})
