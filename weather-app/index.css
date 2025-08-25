@@ -89,7 +89,7 @@
 
 
     
-#toastbox.animate::after {animation: anim 5s linear forwards;}
+#toastbox.animate::after {animation: anim 5s linear forwards;}  
 
 #toastbox img{height: 100%;width: auto;}
 html,body{margin: 0;padding: 0;overflow-x: hidden;}
